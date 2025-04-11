@@ -29,7 +29,7 @@ export default function TracksPage() {
         >
           <Box
             flex="1"
-            bg="gray.900"
+            bg="black"
             borderRadius="md"
             borderWidth="1px"
             borderColor="gray.800"
@@ -50,7 +50,7 @@ export default function TracksPage() {
             />
           </Box>
           
-          <Button leftIcon={<FiFilter />} variant="outline" colorScheme="whiteAlpha">
+          <Button leftIcon={<FiFilter />} variant="outline" colorScheme="whiteAlpha" color="primary.400" borderColor="primary.400">
             Filter
           </Button>
         </Flex>
@@ -60,10 +60,12 @@ export default function TracksPage() {
           mb={10} 
           p={6} 
           borderRadius="xl" 
-          bgGradient="linear(to-r, primary.900, accent.900)"
+          bg="black"
           position="relative"
           overflow="hidden"
           boxShadow="xl"
+          borderWidth="1px"
+          borderColor="gray.800"
         >
           <Box 
             position="absolute" 
@@ -71,7 +73,7 @@ export default function TracksPage() {
             right="-5%" 
             w="300px" 
             h="300px" 
-            bg="white" 
+            bg="primary.400" 
             opacity="0.05" 
             borderRadius="full" 
           />
@@ -79,7 +81,7 @@ export default function TracksPage() {
           <Flex justify="space-between" align="center">
             <Box>
               <Box
-                bg="whiteAlpha.200"
+                bg="primary.400"
                 px={3}
                 py={1}
                 borderRadius="full"
@@ -96,24 +98,24 @@ export default function TracksPage() {
               <Text color="whiteAlpha.800" mb={4} maxW="600px">
                 Master the fundamentals of artificial intelligence and understand how AI can be applied in the public sector.
               </Text>
-              <Progress value={userProgress.tracks['ai-foundations']?.progress || 0} colorScheme="whiteAlpha" size="sm" borderRadius="full" mb={2} />
+              <Progress value={userProgress.tracks['ai-foundations']?.progress || 0} colorScheme="primary" size="sm" borderRadius="full" mb={2} />
               <Flex justify="space-between" align="center">
                 <Text color="whiteAlpha.700" fontSize="sm">
                   {userProgress.tracks['ai-foundations']?.progress || 0}% Complete
                 </Text>
-                <Button colorScheme="whiteAlpha" size="md" onClick={() => router.push('/tracks/ai-foundations')}>
+                <Button bg="primary.400" color="white" size="md" onClick={() => router.push('/tracks/ai-foundations')}>
                   Continue Learning
                 </Button>
               </Flex>
             </Box>
             <Box
-              bg="whiteAlpha.200"
+              bg="gray.900"
               borderRadius="full"
               p={4}
               boxShadow="inner"
               display={{ base: 'none', md: 'block' }}
             >
-              <Icon as={FiBookOpen} boxSize={14} color="white" />
+              <Icon as={FiBookOpen} boxSize={14} color="primary.400" />
             </Box>
           </Flex>
         </Box>
@@ -128,7 +130,7 @@ export default function TracksPage() {
             progress={userProgress.tracks['ai-foundations']?.progress || 0}
             lessons={12}
             lessonsCompleted={8}
-            imageUrl="https://via.placeholder.com/300x200/1a1a2e/FFFFFF?text=AI+Foundations"
+            imageUrl="https://via.placeholder.com/300x200/000000/FFFFFF?text=AI+Foundations"
             href="/tracks/ai-foundations"
             trackId="ai-foundations"
           />
@@ -138,7 +140,7 @@ export default function TracksPage() {
             progress={0}
             lessons={8}
             lessonsCompleted={0}
-            imageUrl="https://via.placeholder.com/300x200/1a1a2e/FFFFFF?text=Prompt+Engineering"
+            imageUrl="https://via.placeholder.com/300x200/000000/FFFFFF?text=Prompt+Engineering"
             href="/tracks/prompt-engineering"
           />
           <CourseCard 
@@ -147,7 +149,7 @@ export default function TracksPage() {
             progress={0}
             lessons={10}
             lessonsCompleted={0}
-            imageUrl="https://via.placeholder.com/300x200/1a1a2e/FFFFFF?text=AI+in+Public+Services"
+            imageUrl="https://via.placeholder.com/300x200/000000/FFFFFF?text=AI+in+Public+Services"
             href="/tracks/ai-in-public-services"
           />
           <CourseCard 
@@ -156,7 +158,7 @@ export default function TracksPage() {
             progress={0}
             lessons={6}
             lessonsCompleted={0}
-            imageUrl="https://via.placeholder.com/300x200/1a1a2e/FFFFFF?text=AI+Ethics"
+            imageUrl="https://via.placeholder.com/300x200/000000/FFFFFF?text=AI+Ethics"
             href="/tracks/ai-ethics"
           />
           <CourseCard 
@@ -165,7 +167,7 @@ export default function TracksPage() {
             progress={0}
             lessons={9}
             lessonsCompleted={0}
-            imageUrl="https://via.placeholder.com/300x200/1a1a2e/FFFFFF?text=Data+Literacy"
+            imageUrl="https://via.placeholder.com/300x200/000000/FFFFFF?text=Data+Literacy"
             href="/tracks/data-literacy"
           />
           <CourseCard 
@@ -174,7 +176,7 @@ export default function TracksPage() {
             progress={0}
             lessons={7}
             lessonsCompleted={0}
-            imageUrl="https://via.placeholder.com/300x200/1a1a2e/FFFFFF?text=AI+Implementation"
+            imageUrl="https://via.placeholder.com/300x200/000000/FFFFFF?text=AI+Implementation"
             href="/tracks/ai-implementation"
           />
         </Grid>

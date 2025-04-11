@@ -20,22 +20,22 @@
 }
 
 .stat-card.purple {
-  background-color: rgba(88, 28, 135, 0.4);
+  background-color: rgba(65, 84, 222, 0.4);
   color: rgb(243, 232, 255);
 }
 
 .stat-card.orange {
-  background-color: rgba(154, 52, 18, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   color: rgb(255, 237, 213);
 }
 
 .stat-card.blue {
-  background-color: rgba(30, 58, 138, 0.4);
+  background-color: rgba(65, 84, 222, 0.4);
   color: rgb(219, 234, 254);
 }
 
 .stat-card.green {
-  background-color: rgba(20, 83, 45, 0.4);
+  background-color: rgba(65, 84, 222, 0.2);
   color: rgb(220, 252, 231);
 }
 
@@ -47,13 +47,13 @@
 
 @layer base {
   body {
-    background-color: #0f0f12;
+    background-color: #111111;
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
   .glass-card {
-    background: rgba(30, 30, 40, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;

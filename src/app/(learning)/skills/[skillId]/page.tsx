@@ -39,7 +39,7 @@ export default function SkillPage({ params }: SkillPageProps) {
       <div className="container px-4 mx-auto">
         <div className="flex items-center gap-4 mb-6">
           <Link href="/dashboard">
-            <Button variant="ghost" size="sm">
+            <Button variant="outline" size="sm" className="text-[#4154de] border-[#4154de]">
               Back
             </Button>
           </Link>

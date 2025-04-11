@@ -42,6 +42,14 @@ const TRACK_DATA = {
   }
 };
 
+// Default module progress data
+const defaultModuleProgress = {
+  completed: false,
+  progress: 0,
+  completedLessons: 0,
+  lastAccessed: ''
+};
+
 export default function TrackPage() {
   const params = useParams();
   const trackId = params.trackId as string;
@@ -72,12 +80,10 @@ export default function TrackPage() {
         
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
           {trackData.modules.map((module) => {
-            const moduleProgress = trackProgress.modules[module.id] || { 
-              completed: false, 
-              progress: 0, 
-              completedLessons: 0,
-              lastAccessed: ''
-            };
+            // Safely merge module progress with default values
+            const moduleProgress = trackProgress.modules[module.id] 
+              ? { ...defaultModuleProgress, ...trackProgress.modules[module.id] }
+              : defaultModuleProgress;
             
             return (
               <ModuleCard
@@ -86,10 +92,10 @@ export default function TrackPage() {
                 title={module.title}
                 description={module.description}
                 lessonCount={module.lessonCount}
-                completedLessons={moduleProgress?.completedLessons || 0}
+                completedLessons={moduleProgress.completedLessons}
                 estimatedHours={module.estimatedHours}
-                progress={moduleProgress?.progress || 0}
-                icon={module.icon as ReactNode}
+                progress={moduleProgress.progress}
+                icon={module.icon as unknown as ReactNode}
                 href={`/modules/${module.id}`}
               />
             );

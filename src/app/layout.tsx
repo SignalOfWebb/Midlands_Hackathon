@@ -1,3 +1,4 @@
+import { ChatWidget } from '@/components/chat/ChatWidget'
 import { Providers as ChakraProviders } from './chakra-providers'
 import './globals.css'
 import { Providers } from './providers'
@@ -18,6 +19,7 @@ export default function RootLayout({
         <ChakraProviders>
           <Providers>
             {children}
+            <ChatWidget />
           </Providers>
         </ChakraProviders>
       </body>

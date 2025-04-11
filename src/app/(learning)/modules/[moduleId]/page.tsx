@@ -131,9 +131,10 @@ export default function ModulePage() {
           <Button
             as={NextLink}
             href={`/tracks/${moduleData.trackId}`}
-            variant="ghost"
+            variant="outline"
             leftIcon={<FiArrowLeft />}
-            color="primary.300"
+            color="primary.400"
+            borderColor="primary.400"
           >
             Back to {moduleData.trackTitle}
           </Button>
@@ -157,7 +158,7 @@ export default function ModulePage() {
           </Flex>
         </Box>
         
-        <Divider borderColor="gray.700" />
+        <Divider borderColor="gray.800" />
         
         <VStack spacing={4} align="stretch">
           {moduleData.lessons.map((lesson, index) => {
@@ -169,9 +170,9 @@ export default function ModulePage() {
                 key={lesson.id} 
                 p={5} 
                 borderRadius="xl" 
-                bg="gray.800" 
+                bg="black" 
                 borderWidth="1px"
-                borderColor={isCompleted ? "green.500" : "gray.700"}
+                borderColor={isCompleted ? "green.500" : "gray.800"}
                 position="relative"
                 overflow="hidden"
               >
@@ -203,8 +204,12 @@ export default function ModulePage() {
                   </Box>
                   
                   <Button 
-                    colorScheme={isCompleted ? "green" : "primary"}
+                    bg={isCompleted ? "green.500" : "primary.400"}
+                    color="white"
                     onClick={() => handleStartLesson(lesson.id)}
+                    _hover={{
+                      bg: isCompleted ? "green.600" : "primary.500",
+                    }}
                   >
                     {isCompleted ? 'Review' : lessonProgress.progress > 0 ? 'Continue' : 'Start'}
                   </Button>

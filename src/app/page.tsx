@@ -18,7 +18,7 @@ export default function LandingPage() {
     <Box>
       {/* Hero Section */}
       <Box 
-        bgGradient="linear(to-r, #111124, #1a1a2e)" 
+        bg="black" 
         color="white" 
         pt={{ base: 16, md: 28 }} 
         pb={{ base: 20, md: 32 }}
@@ -32,7 +32,7 @@ export default function LandingPage() {
           right="5%" 
           w="300px" 
           h="300px" 
-          bg="accent.600" 
+          bg="primary.400" 
           opacity="0.1" 
           borderRadius="full" 
           filter="blur(40px)"
@@ -43,7 +43,7 @@ export default function LandingPage() {
           left="5%" 
           w="250px" 
           h="250px" 
-          bg="primary.600" 
+          bg="primary.400" 
           opacity="0.1" 
           borderRadius="full" 
           filter="blur(40px)"
@@ -82,11 +82,12 @@ export default function LandingPage() {
                 <Button
                   size="lg"
                   onClick={handleContinueLearning}
-                  colorScheme="primary"
+                  bg="primary.400"
+                  color="white"
                   px={8}
                   fontSize="md"
                   fontWeight="bold"
-                  _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                  _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg', bg: 'primary.500' }}
                   transition="all 0.2s"
                 >
                   Start Learning
@@ -100,6 +101,8 @@ export default function LandingPage() {
                   px={8}
                   fontSize="md"
                   fontWeight="bold"
+                  color="primary.400"
+                  borderColor="primary.400"
                   _hover={{ bg: 'whiteAlpha.100' }}
                 >
                   View Dashboard
@@ -111,7 +114,7 @@ export default function LandingPage() {
             <Box 
               position="relative" 
               minW={{ lg: '500px' }}
-              bg="whiteAlpha.100"
+              bg="gray.900"
               borderRadius="2xl"
               overflow="hidden" 
               boxShadow="xl"
@@ -119,13 +122,13 @@ export default function LandingPage() {
               <Box 
                 p={1} 
                 borderRadius="2xl" 
-                bg="rgba(255,255,255,0.1)"
+                bg="rgba(255,255,255,0.05)"
                 backdropFilter="blur(8px)"
               >
                 <Image 
                   alt="AI Education in the Classroom"
                   src="/ai-classroom-robot.png"
-                  fallbackSrc="https://via.placeholder.com/600x400/1a1a2e/FFFFFF?text=AI+Navigator+Dashboard"
+                  fallbackSrc="https://via.placeholder.com/600x400/000000/FFFFFF?text=AI+Navigator+Dashboard"
                   borderRadius="xl"
                   width="100%"
                   height="auto"
@@ -184,7 +187,7 @@ export default function LandingPage() {
       </Box>
 
       {/* CTA Section */}
-      <Box py={20} bgGradient="linear(to-r, #111124, #1a1a2e)">
+      <Box py={20} bg="black">
         <Container maxW="container.md" textAlign="center">
           <Stack spacing={8}>
             <Heading color="white" fontSize={{ base: '3xl', md: '4xl' }}>
@@ -203,11 +206,12 @@ export default function LandingPage() {
                 as={NextLink}
                 href="/signup"
                 size="lg"
-                colorScheme="primary"
+                bg="primary.400"
+                color="white"
                 px={8}
                 fontSize="md"
                 fontWeight="bold"
-                _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg', bg: 'primary.500' }}
                 transition="all 0.2s"
               >
                 Create Account
@@ -220,6 +224,8 @@ export default function LandingPage() {
                 px={8}
                 fontSize="md"
                 fontWeight="bold"
+                color="primary.400"
+                borderColor="primary.400"
                 _hover={{ bg: 'whiteAlpha.100' }}
               >
                 Sign In
@@ -230,7 +236,7 @@ export default function LandingPage() {
       </Box>
 
       {/* Footer */}
-      <Box bg="gray.900" color="gray.400" py={8}>
+      <Box bg="black" color="gray.400" py={8}>
         <Container maxW="container.xl">
           <Stack
             direction={{ base: 'column', md: 'row' }}
@@ -265,7 +271,7 @@ interface FeatureCardProps {
 function FeatureCard({ title, text, icon }: FeatureCardProps) {
   return (
     <Box
-      bg="gray.800"
+      bg="black"
       p={6}
       borderRadius="xl"
       _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
@@ -277,8 +283,8 @@ function FeatureCard({ title, text, icon }: FeatureCardProps) {
         align="center"
         justify="center"
         borderRadius="full"
-        bg="primary.900"
-        color="primary.100"
+        bg="gray.900"
+        color="primary.400"
         mb={4}
       >
         <Icon as={icon} boxSize={6} />

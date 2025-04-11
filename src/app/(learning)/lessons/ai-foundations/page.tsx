@@ -1,5 +1,6 @@
 'use client'
 
+import { ChatWidget } from '@/components/chat/ChatWidget'
 import { Lesson } from '@/components/learning/Lesson'
 import { updateLessonProgress } from '@/lib/user-progress'
 import { Box, Button, Container, Flex } from '@chakra-ui/react'
@@ -307,9 +308,10 @@ export default function LessonPage() {
         <Button
           as={NextLink}
           href={`/modules/${lessonData.moduleId}`}
-          variant="ghost"
+          variant="outline"
           leftIcon={<FiArrowLeft />}
-          color="primary.300"
+          color="primary.400"
+          borderColor="primary.400"
         >
           Back to {lessonData.moduleTitle}
         </Button>
@@ -325,6 +327,14 @@ export default function LessonPage() {
           onComplete={handleLessonComplete}
         />
       </Box>
+      
+      {/* Context-aware chat widget */}
+      <ChatWidget 
+        context={{
+          title: lessonData.title,
+          content: lessonData.sections[0]?.content // Pass first section content as context
+        }}
+      />
     </Container>
   );
 } 

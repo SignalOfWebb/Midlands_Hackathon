@@ -344,7 +344,8 @@ export function Lesson({ id, title, description, estimatedTime, sections, onComp
       <Flex justify="space-between" mt={8}>
         <Button 
           variant="outline" 
-          colorScheme="gray"
+          color="primary.400"
+          borderColor="primary.400"
           isDisabled={currentSectionIndex === 0}
           onClick={handlePreviousSection}
         >
