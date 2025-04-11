@@ -1,0 +1,76 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1a202c" rx="15" ry="15"/>
+  
+  <!-- Trophy base -->
+  <rect x="170" y="190" width="60" height="15" rx="2" ry="2" fill="#F6AD55" />
+  <rect x="185" y="170" width="30" height="20" fill="#F6AD55" />
+  
+  <!-- Trophy cup -->
+  <path d="M190,170 L190,120 Q190,100 200,100 Q210,100 210,120 L210,170" fill="#F6AD55" />
+  
+  <!-- Trophy handles -->
+  <path d="M190,120 Q175,120 175,135 Q175,145 185,145" fill="none" stroke="#F6AD55" stroke-width="4" />
+  <path d="M210,120 Q225,120 225,135 Q225,145 215,145" fill="none" stroke="#F6AD55" stroke-width="4" />
+  
+  <!-- Trophy shine -->
+  <ellipse cx="200" cy="130" rx="5" ry="15" fill="#FEFCBF" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite" />
+  </ellipse>
+  
+  <!-- Laurel leaves left -->
+  <g fill="#68D391">
+    <path d="M160,150 Q145,140 150,125 L155,127 Q152,138 165,147 Z" />
+    <path d="M165,140 Q150,125 160,115 L163,118 Q156,125 168,137 Z" />
+    <path d="M170,130 Q155,110 170,105 L172,108 Q162,114 172,127 Z" />
+  </g>
+  
+  <!-- Laurel leaves right -->
+  <g fill="#68D391">
+    <path d="M240,150 Q255,140 250,125 L245,127 Q248,138 235,147 Z" />
+    <path d="M235,140 Q250,125 240,115 L237,118 Q244,125 232,137 Z" />
+    <path d="M230,130 Q245,110 230,105 L228,108 Q238,114 228,127 Z" />
+  </g>
+  
+  <!-- Stars/sparkles -->
+  <g fill="#ECC94B">
+    <!-- Star 1 with animation -->
+    <path d="M150,100 L153,107 L160,108 L155,114 L156,121 L150,118 L144,121 L145,114 L140,108 L147,107 Z">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.3s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Star 2 with animation -->
+    <path d="M250,100 L253,107 L260,108 L255,114 L256,121 L250,118 L244,121 L245,114 L240,108 L247,107 Z">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.7s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Star 3 with animation -->
+    <path d="M200,80 L203,87 L210,88 L205,94 L206,101 L200,98 L194,101 L195,94 L190,88 L197,87 Z">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Small confetti particles -->
+  <g>
+    <circle cx="170" cy="170" r="3" fill="#F56565">
+      <animate attributeName="cy" from="170" to="190" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="cx" from="170" to="175" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="230" cy="170" r="3" fill="#4299E1">
+      <animate attributeName="cy" from="170" to="190" dur="1.7s" repeatCount="indefinite" />
+      <animate attributeName="cx" from="230" to="225" dur="1.7s" repeatCount="indefinite" />
+    </circle>
+    <rect x="185" y="95" width="5" height="5" fill="#9F7AEA">
+      <animate attributeName="y" from="95" to="115" dur="2.2s" repeatCount="indefinite" />
+      <animate attributeName="transform" attributeType="XML" type="rotate" from="0 187.5 97.5" to="360 187.5 117.5" dur="2.2s" repeatCount="indefinite" />
+    </rect>
+    <rect x="210" y="95" width="5" height="5" fill="#ED8936">
+      <animate attributeName="y" from="95" to="115" dur="1.9s" repeatCount="indefinite" />
+      <animate attributeName="transform" attributeType="XML" type="rotate" from="0 212.5 97.5" to="360 212.5 117.5" dur="1.9s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Text -->
+  <text x="200" y="230" font-family="Arial" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Congratulations!</text>
+  <text x="200" y="255" font-family="Arial" font-size="14" fill="#A0AEC0" text-anchor="middle">You've completed the lesson</text>
+</svg> 

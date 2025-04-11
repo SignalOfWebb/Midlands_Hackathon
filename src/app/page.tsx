@@ -1,103 +1,292 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { Box, Button, Container, Flex, Heading, Icon, Image, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { MoveRight } from 'lucide-react'
+import NextLink from 'next/link'
+import { useRouter } from 'next/navigation'
+import { FiAward, FiBriefcase, FiCpu, FiLayers, FiTrendingUp, FiUsers } from 'react-icons/fi'
+
+export default function LandingPage() {
+  const router = useRouter();
+  
+  const handleContinueLearning = () => {
+    // Always redirect to the AI Foundations track page
+    router.push('/tracks/ai-foundations');
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <Box>
+      {/* Hero Section */}
+      <Box 
+        bgGradient="linear(to-r, #111124, #1a1a2e)" 
+        color="white" 
+        pt={{ base: 16, md: 28 }} 
+        pb={{ base: 20, md: 32 }}
+        position="relative"
+        overflow="hidden"
+      >
+        {/* Abstract background shapes */}
+        <Box 
+          position="absolute" 
+          top="5%" 
+          right="5%" 
+          w="300px" 
+          h="300px" 
+          bg="accent.600" 
+          opacity="0.1" 
+          borderRadius="full" 
+          filter="blur(40px)"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <Box 
+          position="absolute" 
+          bottom="10%" 
+          left="5%" 
+          w="250px" 
+          h="250px" 
+          bg="primary.600" 
+          opacity="0.1" 
+          borderRadius="full" 
+          filter="blur(40px)"
+        />
+        
+        <Container maxW="container.xl">
+          <Stack 
+            spacing={{ base: 10, md: 16 }} 
+            direction={{ base: 'column', lg: 'row' }}
+            align="center"
+          >
+            <Stack spacing={8} maxW={{ lg: "lg" }}>
+              <Heading
+                as="h1"
+                size="3xl"
+                lineHeight="shorter"
+                fontWeight="bold"
+              >
+                Empower Your AI Journey with{' '}
+                <Text as="span" color="primary.400">
+                  Birmingham AI Navigator
+                </Text>
+              </Heading>
+              <Text 
+                fontSize="xl" 
+                opacity={0.9}
+                maxW={{ base: 'full', md: 'md' }}
+              >
+                Equip Birmingham City Council staff with practical AI skills through our interactive learning platform.
+              </Text>
+              <Stack 
+                direction={{ base: 'column', sm: 'row' }}
+                spacing={4}
+                mt={2}
+              >
+                <Button
+                  size="lg"
+                  onClick={handleContinueLearning}
+                  colorScheme="primary"
+                  px={8}
+                  fontSize="md"
+                  fontWeight="bold"
+                  _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                  transition="all 0.2s"
+                >
+                  Start Learning
+                  <MoveRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button
+                  as={NextLink}
+                  href="/dashboard"
+                  size="lg"
+                  variant="outline"
+                  px={8}
+                  fontSize="md"
+                  fontWeight="bold"
+                  _hover={{ bg: 'whiteAlpha.100' }}
+                >
+                  View Dashboard
+                </Button>
+              </Stack>
+            </Stack>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            {/* Hero Image */}
+            <Box 
+              position="relative" 
+              minW={{ lg: '500px' }}
+              bg="whiteAlpha.100"
+              borderRadius="2xl"
+              overflow="hidden" 
+              boxShadow="xl"
+            >
+              <Box 
+                p={1} 
+                borderRadius="2xl" 
+                bg="rgba(255,255,255,0.1)"
+                backdropFilter="blur(8px)"
+              >
+                <Image 
+                  alt="AI Education in the Classroom"
+                  src="/ai-classroom-robot.png"
+                  fallbackSrc="https://via.placeholder.com/600x400/1a1a2e/FFFFFF?text=AI+Navigator+Dashboard"
+                  borderRadius="xl"
+                  width="100%"
+                  height="auto"
+                />
+              </Box>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Features Section */}
+      <Box bg="gray.900" py={20}>
+        <Container maxW="container.xl">
+          <Stack spacing={4} as={Box} textAlign="center" mb={10}>
+            <Heading color="white" fontSize={{ base: '3xl', md: '4xl' }}>
+              Comprehensive AI Literacy Curriculum
+            </Heading>
+            <Text color="gray.400" maxW="2xl" mx="auto">
+              Designed specifically for Birmingham City Council staff to build practical AI skills through interactive learning.
+            </Text>
+          </Stack>
+
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mt={10}>
+            <FeatureCard
+              icon={FiCpu}
+              title="AI Foundations"
+              text="Learn AI fundamentals, terminology, and core concepts to build a solid knowledge base."
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <FeatureCard
+              icon={FiBriefcase}
+              title="Practical Skills"
+              text="Develop hands-on skills with AI tools and techniques for immediate workplace application."
+            />
+            <FeatureCard
+              icon={FiTrendingUp}
+              title="Advanced Applications"
+              text="Explore advanced AI applications and specialized use cases relevant to public service."
+            />
+            <FeatureCard
+              icon={FiUsers}
+              title="Community Learning"
+              text="Connect with colleagues, share insights, and collaborate on AI-powered solutions."
+            />
+            <FeatureCard
+              icon={FiLayers}
+              title="Structured Progression"
+              text="Follow a clear learning path from beginner to expert with milestone achievements."
+            />
+            <FeatureCard
+              icon={FiAward}
+              title="Certification"
+              text="Earn recognition for your AI proficiency with official Birmingham Council certifications."
+            />
+          </SimpleGrid>
+        </Container>
+      </Box>
+
+      {/* CTA Section */}
+      <Box py={20} bgGradient="linear(to-r, #111124, #1a1a2e)">
+        <Container maxW="container.md" textAlign="center">
+          <Stack spacing={8}>
+            <Heading color="white" fontSize={{ base: '3xl', md: '4xl' }}>
+              Ready to Begin Your AI Journey?
+            </Heading>
+            <Text color="gray.300" fontSize="lg">
+              Join your colleagues who are already building the skills needed for the future of public service.
+            </Text>
+            <Stack
+              direction={{ base: 'column', sm: 'row' }}
+              spacing={4}
+              justify="center"
+              mt={4}
+            >
+              <Button
+                as={NextLink}
+                href="/signup"
+                size="lg"
+                colorScheme="primary"
+                px={8}
+                fontSize="md"
+                fontWeight="bold"
+                _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                transition="all 0.2s"
+              >
+                Create Account
+              </Button>
+              <Button
+                as={NextLink}
+                href="/login"
+                size="lg"
+                variant="outline"
+                px={8}
+                fontSize="md"
+                fontWeight="bold"
+                _hover={{ bg: 'whiteAlpha.100' }}
+              >
+                Sign In
+              </Button>
+            </Stack>
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Footer */}
+      <Box bg="gray.900" color="gray.400" py={8}>
+        <Container maxW="container.xl">
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
+            justify="space-between"
+            align="center"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+            <Text>© 2023 Birmingham City Council. All rights reserved.</Text>
+            <Stack direction="row" spacing={6}>
+              <Link href="#" _hover={{ color: 'white' }}>
+                Privacy Policy
+              </Link>
+              <Link href="#" _hover={{ color: 'white' }}>
+                Terms of Service
+              </Link>
+              <Link href="#" _hover={{ color: 'white' }}>
+                Contact
+              </Link>
+            </Stack>
+          </Stack>
+        </Container>
+      </Box>
+    </Box>
+  )
+}
+
+interface FeatureCardProps {
+  title: string
+  text: string
+  icon: React.ElementType
+}
+
+function FeatureCard({ title, text, icon }: FeatureCardProps) {
+  return (
+    <Box
+      bg="gray.800"
+      p={6}
+      borderRadius="xl"
+      _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
+      transition="all 0.3s"
+    >
+      <Flex
+        w={12}
+        h={12}
+        align="center"
+        justify="center"
+        borderRadius="full"
+        bg="primary.900"
+        color="primary.100"
+        mb={4}
+      >
+        <Icon as={icon} boxSize={6} />
+      </Flex>
+      <Heading as="h3" size="md" mb={3} color="white">
+        {title}
+      </Heading>
+      <Text color="gray.400">{text}</Text>
+    </Box>
+  )
 }

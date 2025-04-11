@@ -1,0 +1,65 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1a202c" rx="15" ry="15"/>
+  
+  <!-- Medical cross symbol -->
+  <g transform="translate(200, 60) scale(0.8)">
+    <rect x="-15" y="-50" width="30" height="100" rx="5" ry="5" fill="#F56565" />
+    <rect x="-50" y="-15" width="100" height="30" rx="5" ry="5" fill="#F56565" />
+  </g>
+  
+  <!-- X-ray/medical scan -->
+  <g transform="translate(100, 150)">
+    <rect x="-50" y="-40" width="100" height="80" fill="#2C5282" stroke="#38B2AC" stroke-width="2" rx="5" ry="5" />
+    
+    <!-- Skeleton/lung graphics simplified -->
+    <path d="M-30,-20 L-10,0 L-30,20 M30,-20 L10,0 L30,20" 
+          stroke="white" stroke-width="2" fill="none" />
+    <ellipse cx="-20" cy="0" rx="15" ry="25" stroke="white" stroke-width="2" fill="none" />
+    <ellipse cx="20" cy="0" rx="15" ry="25" stroke="white" stroke-width="2" fill="none" />
+    
+    <!-- Scanning animation effect -->
+    <rect x="-50" y="-40" width="100" height="5" fill="#38B2AC" opacity="0.7">
+      <animate attributeName="y" from="-40" to="35" dur="2s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- AI analyzing data visualization -->
+  <g transform="translate(300, 150)">
+    <!-- Patient data chart -->
+    <rect x="-50" y="-40" width="100" height="80" fill="#2D3748" stroke="#38B2AC" stroke-width="2" rx="5" ry="5" />
+    
+    <!-- Chart lines -->
+    <polyline points="-40,-20 -30,-25 -20,-10 -10,-30 0,-15 10,-20 20,-5 30,-25 40,-15" 
+              stroke="#4FD1C5" stroke-width="2" fill="none" />
+    
+    <!-- Data points with pulse animation -->
+    <circle cx="-40" cy="-20" r="3" fill="#4FD1C5" />
+    <circle cx="-30" cy="-25" r="3" fill="#4FD1C5" />
+    <circle cx="-20" cy="-10" r="3" fill="#4FD1C5" />
+    <circle cx="-10" cy="-30" r="3" fill="#4FD1C5" />
+    <circle cx="0" cy="-15" r="3" fill="#4FD1C5">
+      <animate attributeName="r" values="3;5;3" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="10" cy="-20" r="3" fill="#4FD1C5" />
+    <circle cx="20" cy="-5" r="3" fill="#4FD1C5" />
+    <circle cx="30" cy="-25" r="3" fill="#4FD1C5" />
+    <circle cx="40" cy="-15" r="3" fill="#4FD1C5" />
+    
+    <!-- AI analysis indicators -->
+    <path d="M-35,10 L-25,10 M-20,10 L10,10 M15,10 L35,10" stroke="#4FD1C5" stroke-width="2" />
+    <path d="M-35,20 L0,20 M5,20 L25,20" stroke="#4FD1C5" stroke-width="2" />
+    <path d="M-25,30 L25,30" stroke="#4FD1C5" stroke-width="2" />
+  </g>
+  
+  <!-- Connecting lines between AI and healthcare -->
+  <path d="M150,150 L250,150" stroke="#805AD5" stroke-width="3" stroke-dasharray="5,5" />
+  <circle cx="200" cy="150" r="7" fill="#805AD5">
+    <animate attributeName="r" values="5;7;5" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Labels -->
+  <text x="100" y="210" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Medical Imaging</text>
+  <text x="300" y="210" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Patient Data Analysis</text>
+  <text x="200" y="250" font-family="Arial" font-size="18" fill="white" text-anchor="middle" font-weight="bold">AI in Healthcare</text>
+</svg> 

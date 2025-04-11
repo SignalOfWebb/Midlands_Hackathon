@@ -1,0 +1,35 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1a202c" rx="15" ry="15"/>
+  
+  <!-- Brain outline -->
+  <path d="M200,60 C240,60 270,90 270,130 C270,170 240,200 200,200 C160,200 130,170 130,130 C130,90 160,60 200,60 Z" 
+        fill="none" stroke="#805AD5" stroke-width="3"/>
+  
+  <!-- Brain details -->
+  <path d="M160,130 C170,110 180,110 190,130 M210,130 C220,110 230,110 240,130 M160,150 C180,170 220,170 240,150" 
+        fill="none" stroke="#805AD5" stroke-width="2"/>
+  
+  <!-- Circuit paths -->
+  <path d="M130,130 L100,130 L100,230 L180,230" fill="none" stroke="#38B2AC" stroke-width="2"/>
+  <path d="M270,130 L300,130 L300,230 L220,230" fill="none" stroke="#38B2AC" stroke-width="2"/>
+  
+  <!-- Circuit nodes -->
+  <circle cx="100" cy="130" r="5" fill="#38B2AC"/>
+  <circle cx="100" cy="180" r="5" fill="#38B2AC"/>
+  <circle cx="100" cy="230" r="5" fill="#38B2AC"/>
+  <circle cx="180" cy="230" r="5" fill="#38B2AC"/>
+  <circle cx="220" cy="230" r="5" fill="#38B2AC"/>
+  <circle cx="300" cy="130" r="5" fill="#38B2AC"/>
+  <circle cx="300" cy="180" r="5" fill="#38B2AC"/>
+  <circle cx="300" cy="230" r="5" fill="#38B2AC"/>
+  
+  <!-- Pulse effect -->
+  <circle cx="200" cy="230" r="20" fill="none" stroke="#E53E3E" stroke-width="2">
+    <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Text -->
+  <text x="200" y="260" font-family="Arial" font-size="18" fill="white" text-anchor="middle">Artificial Intelligence</text>
+</svg> 

@@ -1,0 +1,67 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1a202c" rx="15" ry="15"/>
+  
+  <!-- Divider -->
+  <line x1="200" y1="50" x2="200" y2="250" stroke="#4A5568" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Left side: AI -->
+  <g>
+    <!-- Robot head -->
+    <rect x="80" y="70" width="80" height="100" rx="10" ry="10" fill="#805AD5" />
+    <rect x="95" y="90" width="50" height="20" rx="5" ry="5" fill="#1A202C" />
+    
+    <!-- Robot eyes -->
+    <circle cx="105" cy="100" r="5" fill="#38B2AC">
+      <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="135" cy="100" r="5" fill="#38B2AC">
+      <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Robot antenna -->
+    <line x1="120" y1="70" x2="120" y2="50" stroke="#805AD5" stroke-width="4" />
+    <circle cx="120" cy="45" r="8" fill="#38B2AC">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Binary data -->
+    <text x="70" y="190" font-family="monospace" font-size="14" fill="#38B2AC">10010110</text>
+    <text x="75" y="205" font-family="monospace" font-size="14" fill="#38B2AC">01101001</text>
+    <text x="80" y="220" font-family="monospace" font-size="14" fill="#38B2AC">11001010</text>
+    
+    <!-- Label -->
+    <text x="120" y="245" font-family="Arial" font-size="16" fill="white" text-anchor="middle">AI</text>
+  </g>
+  
+  <!-- Right side: Human -->
+  <g>
+    <!-- Human head -->
+    <circle cx="280" cy="100" r="40" fill="#F56565" />
+    
+    <!-- Human face -->
+    <circle cx="265" cy="90" r="5" fill="#1A202C" /> <!-- left eye -->
+    <circle cx="295" cy="90" r="5" fill="#1A202C" /> <!-- right eye -->
+    <path d="M270,110 Q280,120 290,110" fill="none" stroke="#1A202C" stroke-width="2" /> <!-- smile -->
+    
+    <!-- Human hair -->
+    <path d="M250,80 Q280,50 310,80" fill="none" stroke="#1A202C" stroke-width="4" />
+    
+    <!-- Heart/emotion -->
+    <path d="M280,170 L290,160 Q300,150 290,140 Q280,150 270,140 Q260,150 270,160 Z" fill="#F56565">
+      <animate attributeName="transform" attributeType="XML" type="scale" 
+               values="1;1.1;1" dur="1s" repeatCount="indefinite" additive="sum"/>
+    </path>
+    
+    <!-- Creative spark -->
+    <path d="M300,180 L310,170 L305,180 L315,175 L310,190" fill="none" stroke="#ECC94B" stroke-width="2">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Label -->
+    <text x="280" y="245" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Human</text>
+  </g>
+  
+  <!-- VS label -->
+  <text x="200" y="150" font-family="Arial" font-size="24" fill="white" text-anchor="middle" font-weight="bold">VS</text>
+</svg> 
